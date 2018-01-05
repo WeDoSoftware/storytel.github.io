@@ -28,12 +28,8 @@ const config = {
         use: [ 'style-loader', 'css-loader', 'sass-loader' ]
       },
       {
-        test: /(\.woff2?|\.eot|\.ttf|\.svg|\.gif)/,
+        test: /(\.woff2?|\.eot|\.ttf|\.svg|\.gif|\.jpg|\.png)/,
         use: 'file-loader'
-      },
-      {
-        test: [/\.png$/],
-        use: 'url-loader'
       }
     ]
   },

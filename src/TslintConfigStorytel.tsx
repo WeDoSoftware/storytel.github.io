@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/tslint-config-storytel.png';
+import image from '../assets/tslint-config-storytel.jpg';
 import { Card, CardTitle, CardText, Media, MediaOverlay } from 'react-md';
 
 export default () => (
