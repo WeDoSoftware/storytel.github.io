@@ -1,10 +1,9 @@
-const { DefinePlugin } = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-const config = {
-  devtool: process.env.NODE_ENV === 'development' ? 'cheap-module-eval-source-map' : 'source-map',
+const config = (env, argv) => ({
+  mode: argv.mode,
+  devtool: argv.mode === 'development' ? 'cheap-module-eval-source-map' : 'source-map',
   entry: [
     path.join(__dirname, 'src', 'index.tsx')
   ],
@@ -39,11 +38,7 @@ const config = {
       title: 'Storytel Open Source',
       favicon: path.join(__dirname, 'assets', 'favicon.ico')
     }),
-    new UglifyJSPlugin(),
-    new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
   ]
-};
+});
 
 module.exports = config;
