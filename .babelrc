@@ -1,4 +1,15 @@
 {
-  "presets": [ "@babel/preset-react", "@babel/preset-env" ],
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltIns": "usage",
+        "targets": "last 1 version, > 1%, not dead",
+        "exclude": ["transform-async-to-generator", "transform-regenerator"]
+      },
+    ],
+  ],
   "plugins": [ "@babel/plugin-syntax-object-rest-spread" ]
 }
